@@ -28,7 +28,7 @@ data = data[data["Coolant temp"] <= 100].reset_index(drop=True)
 # ----------------------------
 # Combine features to form X (feature matrix)
 # ----------------------------
-X = data.drop(columns=[target_col])
+X = data.drop(columns=[target])
 
 # ----------------------------
 # Define target vector y
@@ -41,7 +41,8 @@ y = data[target]
 Xtrain, Xtest, ytrain, ytest = train_test_split(
     X, y,
     test_size=0.2,
-    random_state=42
+    random_state=42,
+    stratify=y
 )
 
 Xtrain.to_csv("Xtrain.csv",index=False)
