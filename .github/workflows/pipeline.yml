@@ -27,7 +27,7 @@ jobs:
         run: pip install -r PredictiveMaintenance_project/requirements.txt
       - name: Run Data Preparation
         env:
-          HF_TOKEN: ${{ secrets.THF_TOKEN_ }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN_ }}
         run: python PredictiveMaintenance_project/model_building/prep.py
 
 
